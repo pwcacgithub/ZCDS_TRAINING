@@ -1,0 +1,16 @@
+@EndUserText.label: 'Access control based on CARRID'
+@MappingRole: true
+define role ZCDS_Carrid {
+grant select on ZCDS_SFLIGHT
+
+//--DCL based on Full access
+// ZEX_I_SFLIGHT;
+
+//--DCL based on Literals
+//where carrid = &#39;DL&#39;;
+
+//--DCL based on PFCG Role
+where
+( carrid ) = aspect pfcg_auth( ZCARRID, carrid, ACTVT = '03&' ) ;
+
+}

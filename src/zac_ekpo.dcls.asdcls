@@ -1,0 +1,9 @@
+@EndUserText.label: 'Access Contro for Aspect User'
+@MappingRole: true
+define role ZAC_EKPO {
+    grant
+        select
+            on
+            ZCDS_Accessctrl                    
+            where ernam = aspect user;                       
+}
